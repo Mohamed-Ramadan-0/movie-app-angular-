@@ -1,0 +1,19 @@
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <h5>User name: </h5>
+            <br>
+            <h5>Phone number: </h5>
+
+        </div>
+        <div class="col-md-8">
+            <h4 class="d-inline px-5" *ngIf="!isEdit">{{name}} </h4>
+            <input type="text" *ngIf="isEdit" class="form-control d-inline w-50" [value]="name" >
+            <button  *ngIf="!isEdit" class="d-inline"><i class="fa-solid fa-pen-to-square" (click)="getNameEdit()" ></i></button>
+            <button  *ngIf="isEdit" class="d-inline"><i class="fa-regular fa-square-check"  (click)="getNewName()" ></i></button>
+
+        </div>
+    </div>
+
+</div>

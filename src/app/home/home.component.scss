@@ -1,0 +1,27 @@
+.header
+{
+h2 {
+    position: relative;
+
+    &::before {
+    content: "";
+    position: absolute;
+    width: 25%;
+    height: 1px;
+    top: -2rem;
+    background-color: #a8a8a83d;
+
+  }
+    &::after {
+    content: "";
+    position: absolute;
+    width: 60%;
+    height: 1px;
+    bottom: -4rem;
+    left: 0;
+    background-color: #a8a8a83d;
+
+  }
+}
+
+}

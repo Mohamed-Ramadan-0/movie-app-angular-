@@ -1,0 +1,22 @@
+
+
+
+<div class="card  text-center position-relative" style="background-color: #1e203461;">
+  <div class="  text-center content position-relative">
+    <img class="card-img-top w-100" [src]="'https://image.tmdb.org/t/p/w500'+info.poster_path" alt="">
+    <div class="overlay text-center" [routerLink]="['/details/' ,info.id,info.media_type]">
+      <p class="px-2 py-5">{{info.overview | seemore: 45}}<a class="text-decoration-none text-info"
+          [routerLink]="['/details/' ,info.id,info.media_type]">..see more</a></p>
+    </div>
+  </div>
+  
+  <div class="card-body">
+    <p class="position-absolute top-0 end-0 p-2" style="background-color: #2125567d;">{{info.vote_average |
+      number:'1.0-1'}}</p>
+    <h5 [routerLink]="['/details/' ,info.id,info.media_type]" style="cursor: pointer;" class="card-title fs-6">
+      {{info.title | uppercase}} {{info.name | uppercase}}</h5>
+  </div>
+</div>
+<!-- http://localhost:4200/details/info.id -->
+<!-- http://localhost:4200/details/762504 -->
+<!-- http://localhost:4200/details/833097 -->

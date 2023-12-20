@@ -1,0 +1,9 @@
+.page-link {
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+  &:hover {
+    background-color: #fff;
+    color: black;
+  }
+}

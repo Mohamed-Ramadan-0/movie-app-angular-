@@ -1,0 +1,36 @@
+
+<app-home-header [allMovies]="allMovies"></app-home-header>
+<div class="container"  id="test" >
+  <div  class="row py-5" *ngIf="allMovies.length">
+    <div class="col-md-3">
+      <div class="header d-flex flex-column justify-content-center h-100">
+        <h2>Trending <br> movies <br> to watch now </h2>
+        <p class="text-muted">most watched movies</p>
+        <br>
+        <button class="btn btn-light my-5" routerLink="/movies">See More Movies</button>
+      </div>
+    </div>
+    <div class="col-md-3 py-3" *ngFor="let movie of allMovies">
+      <app-item [info]="movie"></app-item>
+    </div>
+
+  </div>
+<div class="w-75 m-auto " style="background-color: white; height: 2px; "></div>
+  <div class="row py-5" *ngIf="allTV.length">
+
+      <div class="col-md-3">
+        <div id="test" class="header d-flex flex-column justify-content-center h-100">
+          <h2>Trending <br> tvShows <br> to watch now </h2>
+          <p class="text-muted">most watched tvShows</p>
+          <br>
+          <button class="btn btn-light my-5" routerLink="/tvShow">See More TVShows</button>
+        </div>
+      </div>
+      <div class="col-md-3 py-3" *ngFor="let tv of allTV">
+        <app-item [info]="tv"></app-item>
+      </div>
+
+    </div>
+
+    <app-loading *ngIf="allMovies?.length == 0 || allTV?.length ==0"></app-loading>
+</div>

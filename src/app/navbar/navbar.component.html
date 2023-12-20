@@ -1,0 +1,66 @@
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand fs-1" href="#">Movies</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0" *ngIf="isLogin">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="movies">Movies</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="tvShow">TvShow</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="people">People</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="network">Network</a>
+        </li>
+
+      </ul>
+
+      <div class="d-flex align-items-center ms-auto">
+        <input type="text" class="form-control" placeholder="Search ..." [(ngModel)]="term"  (change)="search()">
+        <ul class="list-unstyled d-flex mb-0" >
+          <li class="mx-2">
+            <i class="fab fa-facebook "   style="cursor: pointer;" ></i>
+          </li>
+            <li class="mx-2">
+              <i class="fab fa-twitter "  style="cursor: pointer;" ></i>
+            </li>
+
+              <li class="mx-2">
+                <i class="fab fa-instagram "  style="cursor: pointer;" ></i>
+              </li>
+                <li class="mx-2">
+                  <i class="fab fa-youtube "  style="cursor: pointer;" ></i>
+                </li>
+        </ul>
+        <ul class="list-unstyled d-flex mb-0 ">
+          <li class="mx-2" *ngIf="!isLogin">
+            <a routerLink="register"  class="nav-link m-0">Register</a>
+          </li>
+            <li class="mx-2" *ngIf="!isLogin">
+              <a routerLink="login"  class="nav-link m-0">Login</a>
+            </li>
+              <li class="mx-2" *ngIf="isLogin" (click)="logOut()">
+                <p class="nav-link m-0" style="cursor: pointer;">logOut</p>
+              </li>
+                      <li class="mx-2" *ngIf="isLogin" routerLink="setting">
+                        <p class="nav-link m-0" style="cursor: pointer;" >setting</p>
+                      </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</nav>
